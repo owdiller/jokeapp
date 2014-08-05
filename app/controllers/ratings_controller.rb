@@ -6,6 +6,8 @@ class RatingsController < ApplicationController
 
   def show
     @rating = Rating.find_by(id: params[:id])
+    @user = User.new
+    @user.username = params[:username]
   end
 
   def new

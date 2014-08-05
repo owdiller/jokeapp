@@ -3,7 +3,7 @@
 
 <p><button><a href="/new_rating">Add a Rating</a></button></p>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Username</th>
@@ -18,7 +18,7 @@
   <tbody>
   <% @ratings.each do |rating| %>
     <tr>
-          <td><%= rating.username %></td>
+      <td><%= rating.user.username %></td>
       <td><%= rating.joke_id %></td>
           <td><%= rating.rating %></td>
           <td><button><a href="/ratings/<%= rating.id %>">Rating Showpage</a></button>

@@ -7,7 +7,7 @@
 </div>
 <div>
   <strong>Creator</strong>:<br />
-  <p><%= @joke.user_id %></p>
+  <p><%= @joke.user.username%></p>
 </div>
 <div>
   <strong>Rating</strong>:<br />
@@ -15,4 +15,5 @@
 </div>
 <button><a href="/jokes">Back to Joke Index</a></button> |
 <button><a href="/jokes/<%= @joke.id %>/edit">Edit</a></button> |
-<button><a href="/jokes/<%= @joke.id %>/destroy">Destroy</a></button>
+<button><a href="/jokes/<%= @joke.id %>/destroy">Destroy</a></button> |
+<button><a href="/ratings">Rate this Joke</a></button> 

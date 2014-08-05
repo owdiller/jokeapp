@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :profilepicture
       t.string :description
       t.integer :rating
+      t.string :password_digest
 
       t.timestamps
     end

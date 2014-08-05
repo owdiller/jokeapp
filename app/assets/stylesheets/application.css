@@ -1,1 +1,11 @@
-
+  
+   *  {
+      text-align: center;
+      color: cyan;
+    }
+    h3   {
+      color: white;
+    }
+.table {
+  color: blue;
+}

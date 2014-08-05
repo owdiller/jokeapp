@@ -2,11 +2,16 @@
 
 <p><button><a href="/new_joke">Add a New Joke</a></button></p>
 
-<table>
+
+<button>
+<a href="/jokes/<%= Joke.all[rand(Joke.all.length)].id  %>">Random Joke</a>
+</button>
+
+<table class="table">
   <thead>
     <tr>
       <th>Joke</th>
-      <th>Creator ID   <span>  </span> </th> <br>
+      <th>Creator   <span>  </span> </th> <br>
       <br>
       <th>Rating</th>
       <th></th>
@@ -19,9 +24,11 @@
   <% @jokes.each do |joke| %>
     <tr>
           <td><%= joke.joke %></td>
-          <td><%= joke.user_id %></td>
+      <td><%= joke.user.username %></td>
           <td><%= joke.joke_id %></td>
-          <td><%= joke.rating %></td>
+      <% joke.ratings.each do |rating| %>
+      <td><%= rating.rating %></td>
+      <% end %>
           <td><button><a href="/jokes/<%= joke.id %>">Joke Showpage </a></button>
         </td>
       <td><button><a href="/jokes/<%= joke.id %>/edit">Edit Joke</a></button></td>

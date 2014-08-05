@@ -50,4 +50,5 @@ class JokesController < ApplicationController
 
     redirect_to "/jokes"
   end
+
 end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # Routes for the Joke resource:
+  get 'jokes/random' => 'jokes#random'
   get '/sessions/destroy' => 'sessions#destroy'
   get '/sessions/create' => 'sessions#create'
   get '/sessions/new' => 'sessions#new'
