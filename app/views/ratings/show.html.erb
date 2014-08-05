@@ -1,0 +1,18 @@
+<h4>Rating #<%= @rating.id %></h4>
+
+
+<div>
+  <strong>Username</strong>:<br />
+  <p><%= @rating.username %></p> <br>
+</div>
+<div>
+  <strong>Joke</strong>:<br />
+  <p><%= @rating.joke_id %></p>
+</div>
+<div>
+  <strong>Rating</strong>:<br />
+  <p><%= @rating.rating %></p>
+</div>
+<button><a href="/ratings">Return to Rating Index</a></button> |
+<button><a href="/ratings/<%= @rating.id %>/edit">Edit Rating</a></button> |
+<button><a href="/ratings/<%= @rating.id %>/destroy">Delete Rating</a></button>

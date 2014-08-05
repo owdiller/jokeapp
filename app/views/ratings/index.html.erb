@@ -1,0 +1,32 @@
+<h1>Ratings</h1>
+<h4> Please add a rating with 5 being the best and 1 being the worst </h4>
+
+<p><button><a href="/new_rating">Add a Rating</a></button></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Joke</th>
+      <th>Rating</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @ratings.each do |rating| %>
+    <tr>
+          <td><%= rating.username %></td>
+      <td><%= rating.joke_id %></td>
+          <td><%= rating.rating %></td>
+          <td><button><a href="/ratings/<%= rating.id %>">Rating Showpage</a></button>
+        </td>
+      <td><button><a href="/ratings/<%= rating.id %>/edit">Edit Rating</a></button></td>
+      <td><button><a href="/ratings/<%= rating.id %>/destroy">Delete Rating</a></button></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

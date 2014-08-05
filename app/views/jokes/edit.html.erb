@@ -1,0 +1,17 @@
+<h1>Editing Joke #<%= @joke.id %></h1>
+
+<form action="/jokes/<%= @joke.id %>/update">
+  <div>
+    <label for="joke">Joke</label><br />
+    <input id="joke" name="joke" value="<%= @joke.joke  %>" type="text" />
+  </div>
+  <div>
+    <label for="user_id">User ID</label><br />
+    <input id="user_id" name="user_id" value="<%= @joke.user_id  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+

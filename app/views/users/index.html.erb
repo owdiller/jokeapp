@@ -1,0 +1,31 @@
+<h1>User Index</h1>
+
+<p><button><a href="/new_user">New User?</a></button></p>
+<table>
+  <thead>
+    <tr>
+      <th><b> Username       <br> <br> </th>
+      <th>Profile Picture     <br> <br>  </th>
+      <th>Description      <br> <br> </th>
+        <th>Rating </b>     <br> <br>  </th>
+      <th>   </th>
+      <th>   </th>
+      <th>   </th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+          <td><%= user.username %></td>
+          <td><img src="<%= user.profilepicture %>" height="120px" width="120px"></td>
+          <td><%= user.description %></td>
+          <td><%= user.rating %></td>
+          <td><button><a href="/users/<%= user.id %>">User Page</a></button></td>
+      <td><button><a href="/users/<%= user.id %>/edit">Edit User</a></button></td>
+      <td><button><a href="/users/<%= user.id %>/destroy">Destroy User</a></button></td><
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

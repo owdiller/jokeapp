@@ -1,0 +1,28 @@
+<h1> Hello <%= @user.username %> </h1>
+<h2>User ID #<%= @user.id %></h2>
+
+<div>
+  <strong>Username</strong>:<br />
+  <p><%= @user.username %></p>
+</div>
+<div>
+  <strong>Profile Picture</strong>:<br />
+  <p><img src='<%= @user.profilepicture %>' height="120px" width="120px"></p>
+</div>
+<div>
+  <strong>Description</strong>:<br />
+  <p><%= @user.description %></p>
+</div>
+<div>
+  <strong>Rating</strong>:<br />
+  <p><%= @user.rating %></p>
+</div>
+<div> <%= @user.username %>'s Ratings </div>
+<ul>
+  <% @user.ratings.each do |rate| %>
+  <li> "<%= rate.rating %>"</li>
+  <% end %>
+</ul>
+<button><a href="/users">Return to User Index</a></button> |
+<button><a href="/users/<%= @user.id %>/edit">Edit User</a></button> |
+<button><a href="/users/<%= @user.id %>/destroy">Destroy User</a></button>

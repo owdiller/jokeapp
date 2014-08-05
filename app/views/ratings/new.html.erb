@@ -1,0 +1,29 @@
+<h1>New Rating</h1>
+
+<form action="/create_rating">
+  <div>
+    <label for="username">username</label><br />
+    <input id="username" name="username" type="text" />
+
+  </div>
+  <div>
+    <label for="user_id">user_id</label><br />
+       <select>
+      <% @users.each do |user| %>
+      <option value="<%= user.id %>"><%= user.username %></option>
+      <% end %>
+      </select>
+  </div>
+  <div>
+    <label for="joke_id">joke_id</label><br />
+    <input id="joke_id" name="joke_id" type="text" />
+  </div>
+  <div>
+    <label for="rating">rating</label><br />
+    <input id="rating" name="rating" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+

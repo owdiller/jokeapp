@@ -1,0 +1,18 @@
+<h2> Joke Showpage! </h2>
+<h4>Joke ID #<%= @joke.id %></h4>
+
+<div>
+  <strong>Joke</strong>:<br />
+  <p><%= @joke.joke %></p>
+</div>
+<div>
+  <strong>Creator</strong>:<br />
+  <p><%= @joke.user_id %></p>
+</div>
+<div>
+  <strong>Rating</strong>:<br />
+  <p><%= @joke.rating %></p>
+</div>
+<button><a href="/jokes">Back to Joke Index</a></button> |
+<button><a href="/jokes/<%= @joke.id %>/edit">Edit</a></button> |
+<button><a href="/jokes/<%= @joke.id %>/destroy">Destroy</a></button>

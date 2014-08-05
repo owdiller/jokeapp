@@ -1,0 +1,33 @@
+<h1>Jokes</h1>
+
+<p><button><a href="/new_joke">Add a New Joke</a></button></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Joke</th>
+      <th>Creator ID   <span>  </span> </th> <br>
+      <br>
+      <th>Rating</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @jokes.each do |joke| %>
+    <tr>
+          <td><%= joke.joke %></td>
+          <td><%= joke.user_id %></td>
+          <td><%= joke.joke_id %></td>
+          <td><%= joke.rating %></td>
+          <td><button><a href="/jokes/<%= joke.id %>">Joke Showpage </a></button>
+        </td>
+      <td><button><a href="/jokes/<%= joke.id %>/edit">Edit Joke</a></button></td>
+      <td><button><a href="/jokes/<%= joke.id %>/destroy">Delete Joke</a></button></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
