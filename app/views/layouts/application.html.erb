@@ -42,9 +42,11 @@
    <div>
      <% if session['username'] %>
      <h4> You're Signed in, <%= session['username'] %></h4>
-  <button><a href="/sessions/destroy">Sign out!</a></button>
+  <button type="submit" class="btn btn-default">
+    <span class="glyphicon glyphicon-send"><a href="/sessions/destroy">Sign out!</a></button>
      <% else %>
-  <button><a href="/sessions/new">Sign in!</a></button>
+  <button type="submit" class="btn btn-default">
+    <span class="glyphicon glyphicon-lock"><a href="/sessions/new">Sign in!</a></button>
      <% end %>
   </div>
   <div>
