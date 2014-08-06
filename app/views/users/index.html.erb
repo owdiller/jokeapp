@@ -22,10 +22,13 @@
           <td><img src="<%= user.profilepicture %>" height="120px" width="120px"></td>
           <td><%= user.description %></td>
           <td><%= user.rating %></td>
+      
           <td><button><a href="/users/<%= user.id %>">User Page</a></button></td>
+      <% if session['username'] == user.username%>
       <td><button><a href="/users/<%= user.id %>/edit">Edit User</a></button></td>
-      <td><button><a href="/users/<%= user.id %>/destroy">Destroy User</a></button></td><
+      <td><button><a href="/users/<%= user.id %>/destroy">Destroy User</a></button></td>
     </tr>
+    <% end %>
   <% end %>
   </tbody>
 </table>

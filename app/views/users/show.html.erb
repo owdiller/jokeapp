@@ -24,5 +24,7 @@
   <% end %>
 </ul>
 <button><a href="/users">Return to User Index</a></button> |
+<% if session['username']  == @user.username%>
 <button><a href="/users/<%= @user.id %>/edit">Edit User</a></button> |
 <button><a href="/users/<%= @user.id %>/destroy">Destroy User</a></button>
+<% end %>

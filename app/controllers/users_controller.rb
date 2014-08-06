@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+ before_filter :login_required, :except => [:index, :new, :create, :show]
   def index
     @users = User.all
   end
@@ -29,7 +29,9 @@ class UsersController < ApplicationController
   def edit
     @user = User.find_by(id: params[:id])
     @user.password = params['password']
-    @user.password_confirmation = params['password_confirmation']
+    if @user.username != session['username']
+       redirect_to "/users"
+    end
   end
 
   def update

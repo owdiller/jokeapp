@@ -1,18 +1,18 @@
 <h1>New Rating</h1>
 <div class="container">
 <form action="/create_rating">
-    <label for="user_id">user_id</label><br />
+    <label for="user_id">User who made the joke</label><br />
        <select name="user_id">
       <% @users.each do |user| %>
       <option value="<%= user.id %>"><%= user.username %></option>
       <% end %>
       </select>
   <div>
-    <label for="joke_id">joke_id</label><br />
+    <label for="joke_id">Joke ID</label><br />
     <input id="joke_id" name="joke_id" type="text" />
   </div>
   <div>
-    <label for="rating">rating</label><br />
+    <label for="rating">Rating</label><br />
     <input id="rating" name="rating" type="text" />
   </div>
   <div>

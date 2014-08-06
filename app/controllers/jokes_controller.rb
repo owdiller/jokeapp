@@ -1,5 +1,6 @@
 class JokesController < ApplicationController
-
+  before_filter :login_required, :except => [:index, :show]
+  
   def index
     @jokes = Joke.all
   end
@@ -9,6 +10,7 @@ class JokesController < ApplicationController
   end
 
   def new
+    @users = User.all
   end
 
   def create
@@ -19,14 +21,16 @@ class JokesController < ApplicationController
     @joke.rating = params[:rating]
 
     if @joke.save
-      redirect_to "/jokes/#{ @joke.id }"
+      redirect_to "/jokes/#{ @joke.id }", :notice => "Joke was created!"
     else
       render 'new'
     end
   end
 
   def edit
-    @joke = Joke.find_by(id: params[:id])
+    if @user.username != session['username']
+      redirect_to "/jokes", :notice => "Can't edit #{@user.name}"
+    end
   end
 
   def update
@@ -37,9 +41,9 @@ class JokesController < ApplicationController
     @joke.rating = params[:rating]
 
     if @joke.save
-      redirect_to "/jokes/#{ @joke.id }"
+      redirect_to "/jokes/#{ @joke.id }", :notice => "Joke was updated!"
     else
-      render 'edit'
+      redirect to '/jokes/index'
     end
   end
 
@@ -50,5 +54,4 @@ class JokesController < ApplicationController
 
     redirect_to "/jokes"
   end
-
 end

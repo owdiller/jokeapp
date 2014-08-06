@@ -48,8 +48,7 @@ class RatingsController < ApplicationController
   def destroy
     @rating = Rating.find_by(id: params[:id])
     @rating.destroy
-
-
     redirect_to "/ratings"
   end
 end
+

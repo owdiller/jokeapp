@@ -24,10 +24,12 @@
           <td><%= rating.rating %></td>
           <td><button><a href="/ratings/<%= rating.id %>">Rating Showpage</a></button>
         </td>
+      <% if session['username'] =='MASTERKEY' %> 
       <td><button><a href="/ratings/<%= rating.id %>/edit">Edit Rating</a></button></td>
       <td><button><a href="/ratings/<%= rating.id %>/destroy">Delete Rating</a></button></td>
     </tr>
-  <% end %>
+    <% end%>
+      <% end %>
   </tbody>
 </table>
 
