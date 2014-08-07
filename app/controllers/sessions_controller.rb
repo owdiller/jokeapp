@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   
   def create
     u = User.find_by_username(params['username'])
-    if u && u.authenticate(params['password'])
+ if u && u.authenticate(params['password'])
      session['username'] = params['username']
     redirect_to '/home'
  else

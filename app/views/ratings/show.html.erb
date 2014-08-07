@@ -1,6 +1,4 @@
 <h4>Rating #<%= @rating.id %></h4>
-
-
 <div>
   <strong>Username</strong>:<br />
   <p><%= @rating.user.username %></p> <br>
@@ -14,7 +12,7 @@
   <p><%= @rating.rating %></p>
 </div>
 <button><a href="/ratings">Return to Rating Index</a></button> 
- <% if session['username'] =='MASTERKEY' %> |
+<% if session['username'] =='MASTERKEY' %> |
 <button><a href="/ratings/<%= @rating.id %>/edit">Edit Rating</a></button> |
 <button><a href="/ratings/<%= @rating.id %>/destroy">Delete Rating</a></button>
 <%end%>
