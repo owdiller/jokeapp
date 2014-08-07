@@ -1,4 +1,4 @@
-class RatingsController < ApplicationController
+heroku run rake db:seedclass RatingsController < ApplicationController
 
   def index
     @ratings = Rating.all
@@ -17,9 +17,9 @@ class RatingsController < ApplicationController
   def create
     @rating = Rating.new
     @rating.username = params[:username]
-    @rating.joke_id = params[:joke_id]
+ #   @rating.joke_id = params[:joke_id]
     @rating.user_id = params[:user_id]
-    @rating.rating = params[:rating]
+#    @rating.rating = params[:rating]
 
     if @rating.save
       redirect_to "/ratings/#{ @rating.id }"
@@ -35,7 +35,7 @@ class RatingsController < ApplicationController
   def update
     @rating = Rating.find_by(id: params[:id])
     @rating.username = params[:username]
-    @rating.joke_id = params[:joke_id]
+  #  @rating.joke_id = params[:joke_id]
     @rating.rating = params[:rating]
 
     if @rating.save
