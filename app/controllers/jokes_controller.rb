@@ -28,9 +28,11 @@ class JokesController < ApplicationController
   end
 
   def edit
-    if @user.username != session['username']
-      redirect_to "/jokes", :notice => "Can't edit #{@user.name}"
-    end
+    @user = User.find_by(id: params[:id])
+#    if @user.username != session['username']
+#      redirect_to "/jokes"
+#    end
+    @jokes = Joke.find_by(id: params[:id])
   end
 
   def update
@@ -42,7 +44,7 @@ class JokesController < ApplicationController
 
     if @joke.save
       redirect_to "/jokes/#{ @joke.id }", :notice => "Joke was updated!"
-    else
+   else
       redirect to '/jokes/index'
     end
   end

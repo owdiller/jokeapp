@@ -4,11 +4,11 @@
     <span class="glyphicon glyphicon-plus"><a href="/new_joke">Add a New Joke</a></button></p>
 
 
+
 <button type="submit" class="btn btn-default">
     <span class="glyphicon glyphicon-refresh">
 <a href="/jokes/<%= Joke.all[rand(Joke.all.length)].id  %>">Random Joke</a>
 </button>
-
 <table class="table">
   <thead>
     <tr>
@@ -32,9 +32,11 @@
           <td><%= rating.rating %></td>
           <% end %>
           <td><button><a href="/jokes/<%= joke.id %>">Joke Showpage </a></button></td>
+      <% if session['username'] == "MASTERKEY" %>
           <td><button><a href="/jokes/<%= joke.id %>/edit">Edit Joke</a></button></td>
           <td><button><a href="/jokes/<%= joke.id %>/destroy">Delete Joke</a></button></td>
     </tr>
+    <%end%>
   <% end %>
   </tbody>
 </table>

@@ -29,6 +29,10 @@
       <td><button><a href="/users/<%= user.id %>/destroy">Destroy User</a></button></td>
     </tr>
     <% end %>
+    <% if session['username'] == "MASTERKEY"%>
+    <td><button><a href="/users/<%= user.id %>/edit">Edit User</a></button></td>
+    <td><button><a href="/users/<%= user.id %>/destroy">Destroy User</a></button></td>
+    <% end %>
   <% end %>
   </tbody>
 </table>

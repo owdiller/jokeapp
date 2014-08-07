@@ -13,11 +13,19 @@
   <strong>Rating</strong>:<br />
   <p><%= @joke.rating %></p>
 </div>
-<button><a href="/jokes">Back to Joke Index</a></button> |
+<button><a href="/jokes">Back to Joke Index</a></button> 
+<% if session['username'] == "MASTERKEY"%>|
 <button><a href="/jokes/<%= @joke.id %>/edit">Edit</a></button> |
-<button><a href="/jokes/<%= @joke.id %>/destroy">Destroy</a></button> |
+<button><a href="/jokes/<%= @joke.id %>/destroy">Destroy</a></button> 
+<% end %>|
 <button><a href="/ratings">Rate this Joke</a></button> 
 <div> 
+</div>
+<br />
+<p><button type="submit" class="btn btn-default">
+    <span class="glyphicon glyphicon-plus"><a href="/new_joke">Add a New Joke</a></button></p>
+
+  <div>
 </div>
 <br />
 <button type="submit" class="btn btn-default">
